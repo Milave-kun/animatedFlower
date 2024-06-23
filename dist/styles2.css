@@ -1,0 +1,119 @@
+body {
+    font-family: 'Garamond', serif; /* Changed font to a romantic serif font */
+    background-color: #111;
+    color: #eee;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.heart-button {
+    position: relative;
+    padding: 20px 40px; /* Increased padding for larger button */
+    background-color: #e60073; /* Romantic pink background color */
+    color: white;
+    border: none;
+    border-radius: 50px; /* Circular button shape */
+    cursor: pointer;
+    font-size: 24px; /* Increased font size */
+    margin-top: 60px; /* Increased margin top */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Soft shadow */
+    overflow: hidden; /* Hide overflow for pseudo-elements */
+    transition: background-color 0.3s ease; /* Smooth color transition */
+}
+
+.heart-button:hover {
+    background-color: #d90069; /* Darker pink color on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.heart-button span {
+    position: relative;
+    z-index: 1; /* Ensure text is above pseudo-element */
+}
+
+.heart-button::before {
+    content: '';
+    position: absolute;
+    top: -10%;
+    left: 50%;
+    width: 120%;
+    height: 120%;
+    background-color: #e60073; /* Romantic pink background color */
+    transform: translateX(-50%) rotate(-45deg);
+    border-radius: 50%;
+    transition: width 0.3s ease;
+    z-index: 0; /* Behind the text */
+}
+
+.heart-button:hover::before {
+    width: 200%; /* Increase width on hover to form the heart shape */
+    top: -30%; /* Adjust position for better heart shape */
+    background-color: #d90069; /* Darker pink color on hover */
+}
+
+#love-message {
+    font-size: 48px; /* Larger font size for the love message */
+    margin-top: 80px;
+    color: #eee;
+    font-style: italic;
+    text-shadow: 2px 2px 4px #333; /* Enhanced text shadow */
+    font-weight: bold; /* Make the text bold */
+}
+
+.heart {
+    color: #e60073; /* Matching heart color to button background */
+}
+.heart2 {
+    width: 100px;
+    height: 90px;
+    position: relative;
+    animation: pulse 1.5s infinite cubic-bezier(0.66, 0, 0.33, 1);
+  }
+  
+  .heart2:before,
+  .heart2:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 50px;
+    height: 80px;
+    border-radius: 50px 50px 0 0;
+    background: red;
+  }
+  
+  .heart2:before {
+    left: 50px;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+    box-shadow: 0 0 10px 5px rgba(255, 0, 0, 0.7); /* Apply glow to the left half */
+  }
+  
+  .heart2:after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+    box-shadow: 0 0 10px 5px rgba(255, 0, 0, 0.7); /* Apply glow to the right half */
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  
